@@ -10,15 +10,11 @@
 
 @implementation NSArray (CJExtensions)
 
-- (NSArray *)filterArrayUsingBlock:(CJFilterBlock)block
+- (NSArray *)filterArrayUsingBlock:(NSArrayFilterBlock)block
 {
-    NSMutableArray *filteredArray = [[NSMutableArray alloc] init];
+    NSMutableArray *filteredArray = [self mutableCopy];
     
-    for (id object in self) {
-        if (block(object)) {
-            [filteredArray addObject:object];
-        }
-    }
+    [filteredArray filterUsingBlock:block];
     
     return [filteredArray copy];
 }

@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef BOOL(^CJFilterBlock)(id);
+#import "NSMutableArray+CJExtensions.h"
 
 @interface NSArray (CJExtensions)
 
-- (NSArray *)filterArrayUsingBlock:(CJFilterBlock)block;
+- (NSArray *)filterArrayUsingBlock:(NSArrayFilterBlock)block;
 
 @end

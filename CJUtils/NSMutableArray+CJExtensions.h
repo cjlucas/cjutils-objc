@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+typedef BOOL(^NSArrayFilterBlock)(id);
+
 @interface NSMutableArray (CJExtensions)
+
+- (void)filterUsingBlock:(NSArrayFilterBlock)block;
 
 @end

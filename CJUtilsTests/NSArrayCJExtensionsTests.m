@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "NSArray+CJExtensions.h"
+
 @interface NSArrayCJExtensionsTests : XCTestCase
 
 @end
@@ -26,9 +28,24 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testFilterUsingBlock
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    // Testing NSArray implementation
+    NSArray *names = @[@"Christopher", @"Markus", @"Paul", @"Johnathan", @"James"];
+    NSArrayFilterBlock longNamesBlock = ^ BOOL (NSString *object) { return [object length] > 5; };
+    
+    NSArray *filteredNames = [names filterArrayUsingBlock:longNamesBlock];
+    
+    XCTAssert([filteredNames count] == 3, @"expected count: 3, actual count: %lu", (unsigned long)[filteredNames count]);
+    
+    
+    // Testing NSMutableArray implementation
+    NSMutableArray *numbers = [NSMutableArray arrayWithObjects:@1, @2, @3, @4, @5, nil];
+    NSArrayFilterBlock evenFilter = ^BOOL(NSNumber *object) { return [object intValue] % 2 == 0; };
+    
+    [numbers filterUsingBlock:evenFilter];
+    
+    XCTAssert([numbers count] == 2, @"expected count: 2, actual count: %lu", (unsigned long)[filteredNames count]);
 }
 
 @end
