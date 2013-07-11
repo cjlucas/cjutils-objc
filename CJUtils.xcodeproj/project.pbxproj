@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		83433330178BB21300CC985D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8343332F178BB21300CC985D /* Cocoa.framework */; };
-		8343333A178BB21300CC985D /* CJUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 83433339178BB21300CC985D /* CJUtils.m */; };
 		83433341178BB21300CC985D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83433340178BB21300CC985D /* XCTest.framework */; };
 		83433342178BB21300CC985D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8343332F178BB21300CC985D /* Cocoa.framework */; };
 		83433345178BB21300CC985D /* CJUtils.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8343332C178BB21300CC985D /* CJUtils.dylib */; };
 		8343334B178BB21300CC985D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83433349178BB21300CC985D /* InfoPlist.strings */; };
-		8343334D178BB21300CC985D /* CJUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8343334C178BB21300CC985D /* CJUtilsTests.m */; };
+		8343335B178BB28E00CC985D /* NSDictionary+CJExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 83433359178BB28E00CC985D /* NSDictionary+CJExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8343335C178BB28E00CC985D /* NSDictionary+CJExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8343335A178BB28E00CC985D /* NSDictionary+CJExtensions.m */; };
+		8343335D178BB28E00CC985D /* NSDictionary+CJExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8343335A178BB28E00CC985D /* NSDictionary+CJExtensions.m */; };
+		83433361178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83433360178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m */; };
+		83433389178C94A200CC985D /* CJLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 83433388178C94A200CC985D /* CJLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83A4C2E0178E3DFA0078725B /* CJStringNormalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 83A4C2DE178E3DFA0078725B /* CJStringNormalization.h */; };
+		83A4C2E1178E3DFA0078725B /* CJStringNormalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2DF178E3DFA0078725B /* CJStringNormalization.m */; };
+		83A4C2E2178E3DFA0078725B /* CJStringNormalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2DF178E3DFA0078725B /* CJStringNormalization.m */; };
+		83A4C2E4178E3F380078725B /* CJStringNormalizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2E3178E3F380078725B /* CJStringNormalizationTests.m */; };
+		83A4C2E7178E6A030078725B /* NSArray+CJExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 83A4C2E5178E6A030078725B /* NSArray+CJExtensions.h */; };
+		83A4C2E8178E6A030078725B /* NSArray+CJExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2E6178E6A030078725B /* NSArray+CJExtensions.m */; };
+		83A4C2E9178E6A030078725B /* NSArray+CJExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2E6178E6A030078725B /* NSArray+CJExtensions.m */; };
+		83A4C2EB178E6B300078725B /* NSArrayCJExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2EA178E6B300078725B /* NSArrayCJExtensionsTests.m */; };
+		83A4C2EE178E79FF0078725B /* NSMutableArray+CJExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 83A4C2EC178E79FF0078725B /* NSMutableArray+CJExtensions.h */; };
+		83A4C2EF178E79FF0078725B /* NSMutableArray+CJExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2ED178E79FF0078725B /* NSMutableArray+CJExtensions.m */; };
+		83A4C2F0178E79FF0078725B /* NSMutableArray+CJExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2ED178E79FF0078725B /* NSMutableArray+CJExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +41,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		833FF0F3178CB0570071195F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8343332C178BB21300CC985D /* CJUtils.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = CJUtils.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		8343332F178BB21300CC985D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		83433332178BB21300CC985D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83433333178BB21300CC985D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		83433334178BB21300CC985D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		83433337178BB21300CC985D /* CJUtils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJUtils-Prefix.pch"; sourceTree = "<group>"; };
-		83433338178BB21300CC985D /* CJUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJUtils.h; sourceTree = "<group>"; };
-		83433339178BB21300CC985D /* CJUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUtils.m; sourceTree = "<group>"; };
 		8343333F178BB21300CC985D /* CJUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = folder; includeInIndex = 0; path = CJUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83433340178BB21300CC985D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		83433348178BB21300CC985D /* CJUtilsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CJUtilsTests-Info.plist"; sourceTree = "<group>"; };
 		8343334A178BB21300CC985D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8343334C178BB21300CC985D /* CJUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJUtilsTests.m; sourceTree = "<group>"; };
+		83433359178BB28E00CC985D /* NSDictionary+CJExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CJExtensions.h"; sourceTree = "<group>"; };
+		8343335A178BB28E00CC985D /* NSDictionary+CJExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CJExtensions.m"; sourceTree = "<group>"; };
+		83433360178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryCJExtensionsTests.m; sourceTree = "<group>"; };
+		83433388178C94A200CC985D /* CJLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLog.h; sourceTree = "<group>"; };
+		83A4C2DE178E3DFA0078725B /* CJStringNormalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJStringNormalization.h; sourceTree = "<group>"; };
+		83A4C2DF178E3DFA0078725B /* CJStringNormalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJStringNormalization.m; sourceTree = "<group>"; };
+		83A4C2E3178E3F380078725B /* CJStringNormalizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJStringNormalizationTests.m; path = CJUtilsTests/CJStringNormalizationTests.m; sourceTree = SOURCE_ROOT; };
+		83A4C2E5178E6A030078725B /* NSArray+CJExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CJExtensions.h"; sourceTree = "<group>"; };
+		83A4C2E6178E6A030078725B /* NSArray+CJExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CJExtensions.m"; sourceTree = "<group>"; };
+		83A4C2EA178E6B300078725B /* NSArrayCJExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayCJExtensionsTests.m; sourceTree = "<group>"; };
+		83A4C2EC178E79FF0078725B /* NSMutableArray+CJExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CJExtensions.h"; sourceTree = "<group>"; };
+		83A4C2ED178E79FF0078725B /* NSMutableArray+CJExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CJExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +112,7 @@
 			children = (
 				8343332F178BB21300CC985D /* Cocoa.framework */,
 				83433340178BB21300CC985D /* XCTest.framework */,
+				833FF0F3178CB0570071195F /* Foundation.framework */,
 				83433331178BB21300CC985D /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -106,9 +131,11 @@
 		83433335178BB21300CC985D /* CJUtils */ = {
 			isa = PBXGroup;
 			children = (
-				83433338178BB21300CC985D /* CJUtils.h */,
-				83433339178BB21300CC985D /* CJUtils.m */,
+				83433356178BB22400CC985D /* Categories */,
 				83433336178BB21300CC985D /* Supporting Files */,
+				83433388178C94A200CC985D /* CJLog.h */,
+				83A4C2DE178E3DFA0078725B /* CJStringNormalization.h */,
+				83A4C2DF178E3DFA0078725B /* CJStringNormalization.m */,
 			);
 			path = CJUtils;
 			sourceTree = "<group>";
@@ -124,7 +151,9 @@
 		83433346178BB21300CC985D /* CJUtilsTests */ = {
 			isa = PBXGroup;
 			children = (
-				8343334C178BB21300CC985D /* CJUtilsTests.m */,
+				83433360178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m */,
+				83A4C2EA178E6B300078725B /* NSArrayCJExtensionsTests.m */,
+				83A4C2E3178E3F380078725B /* CJStringNormalizationTests.m */,
 				83433347178BB21300CC985D /* Supporting Files */,
 			);
 			path = CJUtilsTests;
@@ -139,6 +168,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		83433356178BB22400CC985D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				83433359178BB28E00CC985D /* NSDictionary+CJExtensions.h */,
+				8343335A178BB28E00CC985D /* NSDictionary+CJExtensions.m */,
+				83A4C2E5178E6A030078725B /* NSArray+CJExtensions.h */,
+				83A4C2E6178E6A030078725B /* NSArray+CJExtensions.m */,
+				83A4C2EC178E79FF0078725B /* NSMutableArray+CJExtensions.h */,
+				83A4C2ED178E79FF0078725B /* NSMutableArray+CJExtensions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -146,6 +188,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A4C2E7178E6A030078725B /* NSArray+CJExtensions.h in Headers */,
+				83433389178C94A200CC985D /* CJLog.h in Headers */,
+				83A4C2E0178E3DFA0078725B /* CJStringNormalization.h in Headers */,
+				8343335B178BB28E00CC985D /* NSDictionary+CJExtensions.h in Headers */,
+				83A4C2EE178E79FF0078725B /* NSMutableArray+CJExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8343333A178BB21300CC985D /* CJUtils.m in Sources */,
+				8343335C178BB28E00CC985D /* NSDictionary+CJExtensions.m in Sources */,
+				83A4C2E8178E6A030078725B /* NSArray+CJExtensions.m in Sources */,
+				83A4C2EF178E79FF0078725B /* NSMutableArray+CJExtensions.m in Sources */,
+				83A4C2E1178E3DFA0078725B /* CJStringNormalization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8343334D178BB21300CC985D /* CJUtilsTests.m in Sources */,
+				83A4C2E4178E3F380078725B /* CJStringNormalizationTests.m in Sources */,
+				83A4C2EB178E6B300078725B /* NSArrayCJExtensionsTests.m in Sources */,
+				83433361178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m in Sources */,
+				83A4C2E9178E6A030078725B /* NSArray+CJExtensions.m in Sources */,
+				83A4C2E2178E3DFA0078725B /* CJStringNormalization.m in Sources */,
+				8343335D178BB28E00CC985D /* NSDictionary+CJExtensions.m in Sources */,
+				83A4C2F0178E79FF0078725B /* NSMutableArray+CJExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -334,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -346,7 +402,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CJUtils/CJUtils-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -357,7 +415,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CJUtils/CJUtils-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -420,6 +480,7 @@
 				83433352178BB21300CC985D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83433353178BB21300CC985D /* Build configuration list for PBXNativeTarget "CJUtilsTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +489,7 @@
 				83433355178BB21300CC985D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
