@@ -9,15 +9,15 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8343332B178BB21300CC985D"
-               BuildableName = "CJUtils.dylib"
-               BlueprintName = "CJUtils"
-               ReferencedContainer = "container:CJUtils.xcodeproj">
+               BlueprintIdentifier = "83B3D8CA178FF58F0047E846"
+               BuildableName = "iOS Tests.xctest"
+               BlueprintName = "iOS Tests"
+               ReferencedContainer = "container:CJUtilsTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8343333E178BB21300CC985D"
-               BuildableName = "CJUtilsTests.xctest"
-               BlueprintName = "CJUtilsTests"
-               ReferencedContainer = "container:CJUtils.xcodeproj">
+               BlueprintIdentifier = "83B3D8CA178FF58F0047E846"
+               BuildableName = "iOS Tests.xctest"
+               BlueprintName = "iOS Tests"
+               ReferencedContainer = "container:CJUtilsTests.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

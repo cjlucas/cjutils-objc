@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:CJUtils"
+      name = "CJUtils">
+      <FileRef
+         location = "group:CJLog.h">
+      </FileRef>
+      <FileRef
+         location = "group:CJStringNormalization.h">
+      </FileRef>
+      <FileRef
+         location = "group:CJStringNormalization.m">
+      </FileRef>
+      <FileRef
+         location = "group:CJUtils-Prefix.pch">
+      </FileRef>
+      <FileRef
+         location = "group:NSArray+CJExtensions.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSArray+CJExtensions.m">
+      </FileRef>
+      <FileRef
+         location = "group:NSDateFormatter+CJExtensions.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSDateFormatter+CJExtensions.m">
+      </FileRef>
+      <FileRef
+         location = "group:NSDictionary+CJExtensions.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSDictionary+CJExtensions.m">
+      </FileRef>
+      <FileRef
+         location = "group:NSMutableArray+CJExtensions.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSMutableArray+CJExtensions.m">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:CJUtilsTests/CJUtilsTests.xcodeproj">
+   </FileRef>
+</Workspace>
