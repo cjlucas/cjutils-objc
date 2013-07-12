@@ -17,6 +17,8 @@
 		8343335D178BB28E00CC985D /* NSDictionary+CJExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8343335A178BB28E00CC985D /* NSDictionary+CJExtensions.m */; };
 		83433361178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83433360178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m */; };
 		83433389178C94A200CC985D /* CJLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 83433388178C94A200CC985D /* CJLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		839049DD178F97D3000DED0E /* NSDateFormatter+CJExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 839049DC178F9623000DED0E /* NSDateFormatter+CJExtensions.m */; };
+		839049DF178F99C7000DED0E /* NSDateFormatter+CJExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 839049DE178F99C7000DED0E /* NSDateFormatter+CJExtensionsTests.m */; };
 		83A4C2E0178E3DFA0078725B /* CJStringNormalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 83A4C2DE178E3DFA0078725B /* CJStringNormalization.h */; };
 		83A4C2E1178E3DFA0078725B /* CJStringNormalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2DF178E3DFA0078725B /* CJStringNormalization.m */; };
 		83A4C2E2178E3DFA0078725B /* CJStringNormalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C2DF178E3DFA0078725B /* CJStringNormalization.m */; };
@@ -56,6 +58,9 @@
 		8343335A178BB28E00CC985D /* NSDictionary+CJExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CJExtensions.m"; sourceTree = "<group>"; };
 		83433360178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryCJExtensionsTests.m; sourceTree = "<group>"; };
 		83433388178C94A200CC985D /* CJLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLog.h; sourceTree = "<group>"; };
+		839049DB178F9623000DED0E /* NSDateFormatter+CJExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+CJExtensions.h"; sourceTree = "<group>"; };
+		839049DC178F9623000DED0E /* NSDateFormatter+CJExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+CJExtensions.m"; sourceTree = "<group>"; };
+		839049DE178F99C7000DED0E /* NSDateFormatter+CJExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDateFormatter+CJExtensionsTests.m"; path = "CJUtilsTests/NSDateFormatter+CJExtensionsTests.m"; sourceTree = "<group>"; };
 		83A4C2DE178E3DFA0078725B /* CJStringNormalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJStringNormalization.h; sourceTree = "<group>"; };
 		83A4C2DF178E3DFA0078725B /* CJStringNormalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJStringNormalization.m; sourceTree = "<group>"; };
 		83A4C2E3178E3F380078725B /* CJStringNormalizationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJStringNormalizationTests.m; path = CJUtilsTests/CJStringNormalizationTests.m; sourceTree = SOURCE_ROOT; };
@@ -91,6 +96,7 @@
 		83433323178BB21300CC985D = {
 			isa = PBXGroup;
 			children = (
+				839049DE178F99C7000DED0E /* NSDateFormatter+CJExtensionsTests.m */,
 				83433335178BB21300CC985D /* CJUtils */,
 				83433346178BB21300CC985D /* CJUtilsTests */,
 				8343332E178BB21300CC985D /* Frameworks */,
@@ -171,6 +177,8 @@
 		83433356178BB22400CC985D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				839049DB178F9623000DED0E /* NSDateFormatter+CJExtensions.h */,
+				839049DC178F9623000DED0E /* NSDateFormatter+CJExtensions.m */,
 				83433359178BB28E00CC985D /* NSDictionary+CJExtensions.h */,
 				8343335A178BB28E00CC985D /* NSDictionary+CJExtensions.m */,
 				83A4C2E5178E6A030078725B /* NSArray+CJExtensions.h */,
@@ -282,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839049DD178F97D3000DED0E /* NSDateFormatter+CJExtensions.m in Sources */,
 				8343335C178BB28E00CC985D /* NSDictionary+CJExtensions.m in Sources */,
 				83A4C2E8178E6A030078725B /* NSArray+CJExtensions.m in Sources */,
 				83A4C2EF178E79FF0078725B /* NSMutableArray+CJExtensions.m in Sources */,
@@ -297,6 +306,7 @@
 				83A4C2EB178E6B300078725B /* NSArrayCJExtensionsTests.m in Sources */,
 				83433361178BB45A00CC985D /* NSDictionaryCJExtensionsTests.m in Sources */,
 				83A4C2E9178E6A030078725B /* NSArray+CJExtensions.m in Sources */,
+				839049DF178F99C7000DED0E /* NSDateFormatter+CJExtensionsTests.m in Sources */,
 				83A4C2E2178E3DFA0078725B /* CJStringNormalization.m in Sources */,
 				8343335D178BB28E00CC985D /* NSDictionary+CJExtensions.m in Sources */,
 				83A4C2F0178E79FF0078725B /* NSMutableArray+CJExtensions.m in Sources */,
