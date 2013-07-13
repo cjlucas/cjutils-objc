@@ -482,6 +482,7 @@
 				83B3D8FF178FF9BB0047E846 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83E5304E178FE64D000513E1 /* Build configuration list for PBXProject "CJUtilsTests" */ = {
 			isa = XCConfigurationList;

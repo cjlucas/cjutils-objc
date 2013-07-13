@@ -52,15 +52,29 @@
     CJAssertEqualStrings(normalized, @"look   at all   the space");
 }
 
+- (void)testRemoveRedundantWhitespaceNormalization
+{
+    NSString *normalized = [CJStringNormalization normalizeString:@"so   many   spaces   " withOptions:@{CJStringNormalizationRemoveRedudantWhitespaceKey : @YES}];
+    
+    CJAssertEqualStrings(normalized, @"so many spaces");
+}
+
+- (void)testRemoveAllWhtiespaceNormalization
+{
+    NSString *normalized = [CJStringNormalization normalizeString:@"  i   dont want any   whitespace   " withOptions:@{CJStringNormalizationRemoveAllWhitespaceKey : @YES}];
+    
+    CJAssertEqualStrings(normalized, @"idontwantanywhitespace");
+}
+
 - (void)testAllNormalization
 {
     NSString *prenorm = @"  Oh. My. God. Lôök at all thè chickens. If I had $1 for every chicken, I'd be riçh!   ";
-    NSString *postnorm = @"oh my god look at all the chickens if i had 1 for every chicken id be rich";
+    NSString *postnorm = @"ohmygodlookatallthechickensifihad1foreverychickenidberich";
     NSDictionary *options = @{CJStringNormalizationCaseInsensitivityKey : @YES,
                               CJStringNormalizationDiacriticInsensitivityKey : @YES,
                               CJStringNormalizationRemovePunctuationKey : @YES,
                               CJStringNormalizationRemoveSymbolsKey : @YES,
-                              CJStringNormalizationTrimWhitespaceKey : @YES,
+                              CJStringNormalizationRemoveAllWhitespaceKey : @YES,
                               };
     NSString *normalized = [CJStringNormalization normalizeString:prenorm withOptions:options];
                                                                                         

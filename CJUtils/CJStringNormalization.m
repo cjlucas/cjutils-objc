@@ -26,6 +26,10 @@ NSString * const CJStringNormalizationRemoveAllWhitespaceKey = @"removeAllWhites
 + (NSString *)stripCharactersInCharacterSet:(NSCharacterSet *)characterSet
                                  fromString:(NSString *)string;
 
++ (NSArray *)componentsOfString:(NSString *)string
+     separatedByCharactersInSet:(NSCharacterSet *)characterSet
+             removeEmptyStrings:(BOOL)removeEmptyStrings;
+
 //+ (NSDictionary *)processNormalizationOptions:(NSDictionary *)options;
 //+ (NSArray *)normalizationOptionsKeys;
 
@@ -52,6 +56,18 @@ NSString * const CJStringNormalizationRemoveAllWhitespaceKey = @"removeAllWhites
 + (NSString *)normalizeString:(NSString *)str
 {
     return nil;
+}
+
++ (NSArray *)componentsOfString:(NSString *)string
+     separatedByCharactersInSet:(NSCharacterSet *)characterSet
+             removeEmptyStrings:(BOOL)removeEmptyStrings
+{
+    NSArray *split = [string componentsSeparatedByCharactersInSet:characterSet];
+    if (removeEmptyStrings) {
+        split = [split filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"length > 0"]];
+    }
+    
+    return split;
 }
 
 /*
@@ -118,7 +134,22 @@ NSString * const CJStringNormalizationRemoveAllWhitespaceKey = @"removeAllWhites
                                           fromString:output];
     }
     
-    if ([(NSNumber *)[options objectForKey:CJStringNormalizationTrimWhitespaceKey] boolValue]) {
+
+    
+    /*
+     * Each of the following whitespace normalizations are mutually exclusive
+     * Remove redundant whitespace will also trim string of whitespace
+     */
+    
+    if ([(NSNumber *)[options objectForKey:CJStringNormalizationRemoveAllWhitespaceKey] boolValue]) {
+        NSArray *split = [self componentsOfString:output separatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet] removeEmptyStrings:YES];
+        output = [split componentsJoinedByString:@""];
+        
+    } else if ([(NSNumber *)[options objectForKey:CJStringNormalizationRemoveRedudantWhitespaceKey] boolValue]) {
+        NSArray *split = [self componentsOfString:output separatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet] removeEmptyStrings:YES];
+        output = [split componentsJoinedByString:@" "];
+        
+    } else if ([(NSNumber *)[options objectForKey:CJStringNormalizationTrimWhitespaceKey] boolValue]) {
         output = [output stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     
