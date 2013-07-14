@@ -18,6 +18,8 @@ typedef NS_OPTIONS(NSUInteger, CJStringNormalizationOptions) {
     CJStringNormalizationRemoveAllWhitespaceOption      = 1 << 7,
 };
 
+CJStringNormalizationOptions CJStringNormalizationAllOptions;
+
 
 
 @interface CJStringNormalization : NSObject

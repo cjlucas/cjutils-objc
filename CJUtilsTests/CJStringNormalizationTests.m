@@ -70,8 +70,8 @@
 {
     NSString *prenorm = @"  Oh. My. God. Lôök at all thè chickens. If I had $1 for every chicken, I'd be riçh!   ";
     NSString *postnorm = @"ohmygodlookatallthechickensifihad1foreverychickenidberich";
-    CJStringNormalizationOptions options = CJStringNormalizationCaseInsensitivityOption | CJStringNormalizationDiacriticInsensitivityOption | CJStringNormalizationRemovePunctuationOption | CJStringNormalizationRemoveSymbolsOption | CJStringNormalizationRemoveAllWhitespaceOption;
-    NSString *normalized = [CJStringNormalization normalizeString:prenorm withOptions:options];
+
+    NSString *normalized = [CJStringNormalization normalizeString:prenorm];
                                                                                         
     
     CJAssertEqualStrings(normalized, postnorm);

@@ -8,7 +8,12 @@
 
 #import "CJStringNormalization.h"
 
-
+CJStringNormalizationOptions CJStringNormalizationAllOptions =
+CJStringNormalizationCaseInsensitivityOption |
+CJStringNormalizationDiacriticInsensitivityOption |
+CJStringNormalizationRemovePunctuationOption |
+CJStringNormalizationRemoveSymbolsOption |
+CJStringNormalizationRemoveAllWhitespaceOption;
 
 @interface CJStringNormalization ()
 
@@ -45,12 +50,7 @@
 
 + (NSString *)normalizeString:(NSString *)str
 {
-    CJStringNormalizationOptions options = CJStringNormalizationCaseInsensitivityOption
-    | CJStringNormalizationDiacriticInsensitivityOption
-    | CJStringNormalizationRemovePunctuationOption
-    | CJStringNormalizationRemoveSymbolsOption
-    | CJStringNormalizationRemoveAllWhitespaceOption;
-    return [CJStringNormalization normalizeString:str withOptions:options];
+    return [CJStringNormalization normalizeString:str withOptions:CJStringNormalizationAllOptions];
 }
 
 + (NSArray *)componentsOfString:(NSString *)string
