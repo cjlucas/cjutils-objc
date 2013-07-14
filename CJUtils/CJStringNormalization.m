@@ -8,13 +8,7 @@
 
 #import "CJStringNormalization.h"
 
-NSString * const CJStringNormalizationCaseInsensitivityKey = @"caseInsensitivity";
-NSString * const CJStringNormalizationDiacriticInsensitivityKey = @"diacriticInsensitivity";
-NSString * const CJStringNormalizationRemovePunctuationKey = @"removePunctuation";
-NSString * const CJStringNormalizationRemoveSymbolsKey = @"removeSymbols";
-NSString * const CJStringNormalizationTrimWhitespaceKey = @"trimWhitespace";
-NSString * const CJStringNormalizationRemoveRedudantWhitespaceKey = @"removeRedundantWhitespace";
-NSString * const CJStringNormalizationRemoveAllWhitespaceKey = @"removeAllWhitespace";
+
 
 @interface CJStringNormalization ()
 
@@ -29,10 +23,6 @@ NSString * const CJStringNormalizationRemoveAllWhitespaceKey = @"removeAllWhites
 + (NSArray *)componentsOfString:(NSString *)string
      separatedByCharactersInSet:(NSCharacterSet *)characterSet
              removeEmptyStrings:(BOOL)removeEmptyStrings;
-
-//+ (NSDictionary *)processNormalizationOptions:(NSDictionary *)options;
-//+ (NSArray *)normalizationOptionsKeys;
-
 @end
 
 
@@ -55,7 +45,12 @@ NSString * const CJStringNormalizationRemoveAllWhitespaceKey = @"removeAllWhites
 
 + (NSString *)normalizeString:(NSString *)str
 {
-    return nil;
+    CJStringNormalizationOptions options = CJStringNormalizationCaseInsensitivityOption
+    | CJStringNormalizationDiacriticInsensitivityOption
+    | CJStringNormalizationRemovePunctuationOption
+    | CJStringNormalizationRemoveSymbolsOption
+    | CJStringNormalizationRemoveAllWhitespaceOption;
+    return [CJStringNormalization normalizeString:str withOptions:options];
 }
 
 + (NSArray *)componentsOfString:(NSString *)string
@@ -70,49 +65,15 @@ NSString * const CJStringNormalizationRemoveAllWhitespaceKey = @"removeAllWhites
     return split;
 }
 
-/*
- * NOTE: the next two methods are not actually necessary because 
- * the boolValue of nil typecast to an NSNumber is NO
- */
-
-//+ (NSArray *)normalizationOptionsKeys
-//{
-//    return @[CJStringNormalizationCaseInsensitivityKey,
-//      CJStringNormalizationDiacriticInsensitivityKey,
-//      CJStringNormalizationRemovePunctuationKey,
-//      CJStringNormalizationRemoveSymbolsKey,
-//      CJStringNormalizationTrimWhitespaceKey,
-//      CJStringNormalizationRemoveRedudantWhitespaceKey,
-//      CJStringNormalizationRemoveAllWhitespaceKey,
-//      ];
-//}
-
-/*
- * Ensures all options are inserted (defaults to NO)
- */
-//+ (NSDictionary *)processNormalizationOptions:(NSDictionary *)options
-//{
-//    NSMutableDictionary *mutableOptions = [options mutableCopy];
-//    
-//    for (NSString *normalizationOptionKey in [self normalizationOptionsKeys]) {
-//        id obj = [options objectForKey:normalizationOptionKey];
-//        if (obj == nil) {
-//            [mutableOptions setValue:@NO forKey:normalizationOptionKey];
-//        }
-//    }
-//    
-//    return [mutableOptions copy];
-//}
-
-+ (NSString *)normalizeString:(NSString *)str withOptions:(NSDictionary *)options
++ (NSString *)normalizeString:(NSString *)str withOptions:(CJStringNormalizationOptions)options
 {
     NSString *output = str;
     
-    if ([(NSNumber *)[options objectForKey:CJStringNormalizationCaseInsensitivityKey] boolValue]) {
+    if (options & CJStringNormalizationCaseInsensitivityOption) {
         output = [output lowercaseString];
     }
     
-    if ([(NSNumber *)[options objectForKey:CJStringNormalizationDiacriticInsensitivityKey] boolValue]) {
+    if (options & CJStringNormalizationDiacriticInsensitivityOption) {
         NSData *asciiData = [output dataUsingEncoding:NSASCIIStringEncoding
                                  allowLossyConversion:YES];
         
@@ -120,36 +81,30 @@ NSString * const CJStringNormalizationRemoveAllWhitespaceKey = @"removeAllWhites
                                        encoding:NSASCIIStringEncoding];
     }
     
-    if ([(NSNumber *)[options objectForKey:CJStringNormalizationRemovePunctuationKey] boolValue]) {
+    if (options & CJStringNormalizationRemovePunctuationOption) {
         output = [self stripCharactersInCharacterSet:[NSCharacterSet punctuationCharacterSet]
                                           fromString:output];
     }
     
-    if ([(NSNumber *)[options objectForKey:CJStringNormalizationCaseInsensitivityKey] boolValue]) {
-        output = [output lowercaseString];
-    }
-    
-    if ([(NSNumber *)[options objectForKey:CJStringNormalizationRemoveSymbolsKey] boolValue]) {
+    if (options & CJStringNormalizationRemoveSymbolsOption) {
         output = [self stripCharactersInCharacterSet:[NSCharacterSet symbolCharacterSet]
                                           fromString:output];
     }
-    
-
     
     /*
      * Each of the following whitespace normalizations are mutually exclusive
      * Remove redundant whitespace will also trim string of whitespace
      */
     
-    if ([(NSNumber *)[options objectForKey:CJStringNormalizationRemoveAllWhitespaceKey] boolValue]) {
+    if (options & CJStringNormalizationRemoveAllWhitespaceOption) {
         NSArray *split = [self componentsOfString:output separatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet] removeEmptyStrings:YES];
         output = [split componentsJoinedByString:@""];
         
-    } else if ([(NSNumber *)[options objectForKey:CJStringNormalizationRemoveRedudantWhitespaceKey] boolValue]) {
+    } else if (options & CJStringNormalizationRemoveRedudantWhitespaceOption) {
         NSArray *split = [self componentsOfString:output separatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet] removeEmptyStrings:YES];
         output = [split componentsJoinedByString:@" "];
         
-    } else if ([(NSNumber *)[options objectForKey:CJStringNormalizationTrimWhitespaceKey] boolValue]) {
+    } else if (options & CJStringNormalizationTrimWhitespaceOption) {
         output = [output stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     

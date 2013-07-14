@@ -8,21 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_OPTIONS(NSUInteger, CJStringNormalizationOptions) {
+    CJStringNormalizationCaseInsensitivityOption        = 1 << 1,
+    CJStringNormalizationDiacriticInsensitivityOption   = 1 << 2,
+    CJStringNormalizationRemovePunctuationOption        = 1 << 3,
+    CJStringNormalizationRemoveSymbolsOption            = 1 << 4,
+    CJStringNormalizationTrimWhitespaceOption           = 1 << 5,
+    CJStringNormalizationRemoveRedudantWhitespaceOption = 1 << 6,
+    CJStringNormalizationRemoveAllWhitespaceOption      = 1 << 7,
+};
 
-NSString * const CJStringNormalizationCaseInsensitivityKey;
-NSString * const CJStringNormalizationDiacriticInsensitivityKey;
-NSString * const CJStringNormalizationRemovePunctuationKey;
-NSString * const CJStringNormalizationRemoveSymbolsKey;
-NSString * const CJStringNormalizationTrimWhitespaceKey;
-NSString * const CJStringNormalizationRemoveRedudantWhitespaceKey; // not implemented
-NSString * const CJStringNormalizationRemoveAllWhitespaceKey; // not implemented
+
 
 @interface CJStringNormalization : NSObject
 
 + (NSString *)normalizeString:(NSString *)str;
 
 + (NSString *)normalizeString:(NSString *)str
-                  withOptions:(NSDictionary *)options;
+                  withOptions:(CJStringNormalizationOptions)options;
 
 
 @end

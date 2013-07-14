@@ -33,35 +33,35 @@
 
 - (void)testCaseInsensitiveNormalization
 {
-    NSString *normalized = [CJStringNormalization normalizeString:@"SomEThInG" withOptions:@{CJStringNormalizationCaseInsensitivityKey : @YES}];
+    NSString *normalized = [CJStringNormalization normalizeString:@"SomEThInG" withOptions:CJStringNormalizationCaseInsensitivityOption];
 
     CJAssertEqualStrings(normalized, @"something");
 }
 
 - (void)testDiacriticInsensitiveNormalization
 {
-    NSString *normalized = [CJStringNormalization normalizeString:@"Çïńgular" withOptions:@{CJStringNormalizationDiacriticInsensitivityKey : @YES}];
+    NSString *normalized = [CJStringNormalization normalizeString:@"Çïńgular" withOptions:CJStringNormalizationDiacriticInsensitivityOption];
     
     CJAssertEqualStrings(normalized, @"Cingular");
 }
 
 - (void)testTrimWhitespaceNormalization
 {
-    NSString *normalized = [CJStringNormalization normalizeString:@"   look   at all   the space   "withOptions:@{CJStringNormalizationTrimWhitespaceKey : @YES}];
+    NSString *normalized = [CJStringNormalization normalizeString:@"   look   at all   the space   "withOptions:CJStringNormalizationTrimWhitespaceOption];
     
     CJAssertEqualStrings(normalized, @"look   at all   the space");
 }
 
 - (void)testRemoveRedundantWhitespaceNormalization
 {
-    NSString *normalized = [CJStringNormalization normalizeString:@"so   many   spaces   " withOptions:@{CJStringNormalizationRemoveRedudantWhitespaceKey : @YES}];
+    NSString *normalized = [CJStringNormalization normalizeString:@"so   many   spaces   " withOptions:CJStringNormalizationRemoveRedudantWhitespaceOption];
     
     CJAssertEqualStrings(normalized, @"so many spaces");
 }
 
 - (void)testRemoveAllWhtiespaceNormalization
 {
-    NSString *normalized = [CJStringNormalization normalizeString:@"  i   dont want any   whitespace   " withOptions:@{CJStringNormalizationRemoveAllWhitespaceKey : @YES}];
+    NSString *normalized = [CJStringNormalization normalizeString:@"  i   dont want any   whitespace   " withOptions:CJStringNormalizationRemoveAllWhitespaceOption];
     
     CJAssertEqualStrings(normalized, @"idontwantanywhitespace");
 }
@@ -70,12 +70,7 @@
 {
     NSString *prenorm = @"  Oh. My. God. Lôök at all thè chickens. If I had $1 for every chicken, I'd be riçh!   ";
     NSString *postnorm = @"ohmygodlookatallthechickensifihad1foreverychickenidberich";
-    NSDictionary *options = @{CJStringNormalizationCaseInsensitivityKey : @YES,
-                              CJStringNormalizationDiacriticInsensitivityKey : @YES,
-                              CJStringNormalizationRemovePunctuationKey : @YES,
-                              CJStringNormalizationRemoveSymbolsKey : @YES,
-                              CJStringNormalizationRemoveAllWhitespaceKey : @YES,
-                              };
+    CJStringNormalizationOptions options = CJStringNormalizationCaseInsensitivityOption | CJStringNormalizationDiacriticInsensitivityOption | CJStringNormalizationRemovePunctuationOption | CJStringNormalizationRemoveSymbolsOption | CJStringNormalizationRemoveAllWhitespaceOption;
     NSString *normalized = [CJStringNormalization normalizeString:prenorm withOptions:options];
                                                                                         
     
