@@ -35,8 +35,7 @@
         NSTimeInterval expectedTimeInterval = [expectedNumber doubleValue];
         NSTimeInterval actualTimeInterval = [date timeIntervalSince1970];
         
-        XCTAssertEquals(expectedTimeInterval, actualTimeInterval, @"dateString = %@", dateString);
-        
+        XCTAssertEqual(expectedTimeInterval, actualTimeInterval, @"dateString = %@", dateString);
     }];
 }
 

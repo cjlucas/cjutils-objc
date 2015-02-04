@@ -11,6 +11,12 @@
          location = "group:CJStringNormalization.h">
       </FileRef>
       <FileRef
+         location = "group:UIImage+CJExtensions.h">
+      </FileRef>
+      <FileRef
+         location = "group:UIImage+CJExtensions.m">
+      </FileRef>
+      <FileRef
          location = "group:CJStringNormalization.m">
       </FileRef>
       <FileRef

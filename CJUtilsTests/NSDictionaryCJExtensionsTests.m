@@ -34,7 +34,7 @@
 - (void)testExample
 {
     XCTAssertNil([self.testDictionary nonNullObjectForKey:@"nullObject"], @"check if NSNull object is returned as nil");
-    XCTAssertEquals([self.testDictionary objectForKey:@"actualObject"],
+    XCTAssertEqual([self.testDictionary objectForKey:@"actualObject"],
                     [self.testDictionary nonNullObjectForKey:@"actualObject"],
                     @"check if ");
 }

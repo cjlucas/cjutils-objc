@@ -69,17 +69,14 @@ CJStringNormalizationRemoveAllWhitespaceOption;
 {
     NSString *output = str;
     
+    if (options & CJStringNormalizationDiacriticInsensitivityOption) {
+        options |= CJStringNormalizationRemoveSymbolsOption;
+    }
+    
     if (options & CJStringNormalizationCaseInsensitivityOption) {
         output = [output lowercaseString];
     }
     
-    if (options & CJStringNormalizationDiacriticInsensitivityOption) {
-        NSData *asciiData = [output dataUsingEncoding:NSASCIIStringEncoding
-                                 allowLossyConversion:YES];
-        
-        output = [[NSString alloc] initWithData:asciiData
-                                       encoding:NSASCIIStringEncoding];
-    }
     
     if (options & CJStringNormalizationRemovePunctuationOption) {
         output = [self stripCharactersInCharacterSet:[NSCharacterSet punctuationCharacterSet]
@@ -89,6 +86,14 @@ CJStringNormalizationRemoveAllWhitespaceOption;
     if (options & CJStringNormalizationRemoveSymbolsOption) {
         output = [self stripCharactersInCharacterSet:[NSCharacterSet symbolCharacterSet]
                                           fromString:output];
+    }
+    
+    if (options & CJStringNormalizationDiacriticInsensitivityOption) {
+        NSData *asciiData = [output dataUsingEncoding:NSASCIIStringEncoding
+                                 allowLossyConversion:YES];
+        
+        output = [[NSString alloc] initWithData:asciiData
+                                       encoding:NSASCIIStringEncoding];
     }
     
     /*
